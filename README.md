@@ -6,7 +6,7 @@
 1. The leading open source automation server.
 2. To build and test software project continously
 3. It has number of plugin which is the heart of Jenkins
-4. Setup Jenkins to watch for any changes in repositories like for example you are SVN or github and Automatically to a build with tools like Ant  and Maven and utilise the container Technologies docker and kubernetes,initiate test take actions like a rolling back or rolling forward.For more refer here (jenkins)[https://jenkins.io]
+4. Setup Jenkins to watch for any changes in repositories like for example you are SVN or github and Automatically to a build with tools like Ant  and Maven and utilise the container Technologies docker and kubernetes,initiate test take actions like a rolling back or rolling forward.For more refer here [jenkins](https://jenkins.io)
 
 ##### Continuous Integration #####
 
@@ -40,3 +40,19 @@ Git --Jenkins Master----|
 2. Can run in different OS
 3. Execute jobs
 4. Flexibility
+
+###### Freestyle project ######
+
+1. This is the central feature of Jenkins. 
+2. Jenkins will build your project, combining any SCM with any build system, and this can be even used for something other than software build.
+
+` Create Freestyle project with [ForJenkisExample](https://github.com/lokeshreddy007/ForJenkisExample) `
+Create a project then select Freestyle project. Next Configure page shows up then in Source Code Management select git and give repository link. In Build select execute shell then add below two line
+
+```java
+
+javac helloworld.java
+java HelloWorld
+
+```
+After then click on build now. After Build complete to see output click on console output
