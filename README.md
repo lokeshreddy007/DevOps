@@ -56,3 +56,35 @@ java HelloWorld
 
 ```
 After then click on build now. After Build complete to see output click on console output
+
+###### Scheduling Jobs ######
+
+Use `CRON` expressions to schedule job
+
+    * It is suitable for repetitive task 
+    * To allow periodically scheduled tasks to produce even load on the system, the symbol H (for “hash”) should be used wherever possible. 
+    * This field follows the syntax of cron (with minor differences). Specifically, each line consists of 5 fields separated by TAB or whitespace:
+        * MINUTE HOUR DOM MONTH DOW
+        * MINUTE	Minutes within the hour (0–59)
+        * HOUR	The hour of the day (0–23)
+        * DOM	The day of the month (1–31)
+        * MONTH	The month (1–12)
+        * DOW	The day of the week (0–7) where 0 and 7 are Sunday.
+    * In addition, @yearly, @annually, @monthly, @weekly, @daily, @midnight, and @hourly are supported as convenient aliases. These use the hash system for automatic balancing. 
+    
+###### Examples ######
+
+```cpp
+
+// every fifteen minutes (perhaps at :07, :22, :37, :52)
+H/15 * * * *
+// every ten minutes in the first half of every hour (three times, perhaps at :04, :14, :24)
+H(0-29)/10 * * * *
+// once every two hours at 45 minutes past the hour starting at 9:45 AM and finishing at 3:45 PM every weekday.
+45 9-16/2 * * 1-5
+// once in every two hours slot between 9 AM and 5 PM every weekday (perhaps at 10:38 AM, 12:38 PM, 2:38 PM, 4:38 PM)
+H H(9-16)/2 * * 1-5
+// once a day on the 1st and 15th of every month except December
+H H 1,15 1-11 *
+
+```
